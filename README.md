@@ -7,9 +7,10 @@ data.
 Usage
 ===========
 
-**syntax:**
+**Syntax:**
 
     import yahoocandles as ys
+    
     ys.get_data(symbol: str, interval: str, exchange: str)
 
     
@@ -19,66 +20,23 @@ Quick Start
 **Sample Usage Snippet**
     
     import yahoocandles as ys
+    
     data = ys.get_data(symbol="TATAPOWER", interval="1m",exchange="NSE")
+    
     print(data)
 
+Limitations
+=========================
+ The version 0.0.1 of this scraper will work for all the symbols available in NSE and BSE exchange. The user need
+ to pass the symbol as per the exchange.
 
-    
-Here are some simple ways to navigate that data structure::
+ The user can pass time intervals as per the needs as "1m" for 1 Minute candles, "2m" for 2 Minute candles,
+ "5m" for 5 Minute candles, "15m" for 15 Minute candles, "1d" for 1 Day candles.
 
-    soup.title
-    # <title>The Dormouse's story</title>
+ 1 Minute candles are limited to 7 days before the date of scraping
+ 2 Minute, 5 Minute, 15 Minute candles are limited to 50 days before the date of scraping
+ 1 Day candles are limited to 180 days before the date of scraping
 
-    soup.title.name
-    # u'title'
-
-    soup.title.string
-    # u'The Dormouse's story'
-
-    soup.title.parent.name
-    # u'head'
-
-    soup.p
-    # <p class="title"><b>The Dormouse's story</b></p>
-
-    soup.p['class']
-    # u'title'
-
-    soup.a
-    # <a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>
-
-    soup.find_all('a')
-    # [<a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>,
-    #  <a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>,
-    #  <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>]
-
-    soup.find(id="link3")
-    # <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>
-
-One common task is extracting all the URLs found within a page's <a> tags::
-
-    for link in soup.find_all('a'):
-        print(link.get('href'))
-    # http://example.com/elsie
-    # http://example.com/lacie
-    # http://example.com/tillie
-
-Another common task is extracting all the text from a page::
-
-    print(soup.get_text())
-    # The Dormouse's story
-    #
-    # The Dormouse's story
-    #
-    # Once upon a time there were three little sisters; and their names were
-    # Elsie,
-    # Lacie and
-    # Tillie;
-    # and they lived at the bottom of a well.
-    #
-    # ...
-
-Does this look like what you need? If so, read on.
 
 Installing Yahoo Candle Stick Scraper
 =========================
