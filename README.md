@@ -1,70 +1,28 @@
-Yahoo Candle Stick Scraper
+Yahoo Candle Stick Scraper Documentation
 ============================
-It is a Python library for pulling chart candle stick data out of [yahoo](https://finance.yahoo.com/). 
+Yahoo Candle Stick Scraper is a Python library for pulling chart candle stick data out of [Yahoo Finance](https://finance.yahoo.com/). 
 It parses data from the API requests. It saves time for user/programmer by pulling the realtime
 data.
+
+Usage
+===========
+
+**syntax:**
+    import yahoocandles as ys
+    ys.get_data(symbol: str, interval: str, exchange: str)
+
+
 
 Quick Start
 ===========
 
-Here's an HTML document I'll be using as an example throughout this
-document. It's part of a story from `Alice in Wonderland`::
+**Sample Usage Snippet**
+    import yahoocandles as ys
+    data = ys.get_data(symbol="TATAPOWER", interval="1m", )
 
-    html_doc = """
-    <html><head><title>The Dormouse's story</title></head>
-    <body>
-    <p class="title"><b>The Dormouse's story</b></p>
+    print(data)
 
-    <p class="story">Once upon a time there were three little sisters; and their names were
-    <a href="http://example.com/elsie" class="sister" id="link1">Elsie</a>,
-    <a href="http://example.com/lacie" class="sister" id="link2">Lacie</a> and
-    <a href="http://example.com/tillie" class="sister" id="link3">Tillie</a>;
-    and they lived at the bottom of a well.</p>
-
-    <p class="story">...</p>
-    """
-
-Running the "three sisters" document through Beautiful Soup gives us a
-``BeautifulSoup`` object, which represents the document as a nested
-data structure::
-
-    from bs4 import BeautifulSoup
-    soup = BeautifulSoup(html_doc)
-
-    print(soup.prettify())
-    # <html>
-    #  <head>
-    #   <title>
-    #    The Dormouse's story
-    #   </title>
-    #  </head>
-    #  <body>
-    #   <p class="title">
-    #    <b>
-    #     The Dormouse's story
-    #    </b>
-    #   </p>
-    #   <p class="story">
-    #    Once upon a time there were three little sisters; and their names were
-    #    <a class="sister" href="http://example.com/elsie" id="link1">
-    #     Elsie
-    #    </a>
-    #    ,
-    #    <a class="sister" href="http://example.com/lacie" id="link2">
-    #     Lacie
-    #    </a>
-    #    and
-    #    <a class="sister" href="http://example.com/tillie" id="link2">
-    #     Tillie
-    #    </a>
-    #    ; and they lived at the bottom of a well.
-    #   </p>
-    #   <p class="story">
-    #    ...
-    #   </p>
-    #  </body>
-    # </html>
-
+    
 Here are some simple ways to navigate that data structure::
 
     soup.title
