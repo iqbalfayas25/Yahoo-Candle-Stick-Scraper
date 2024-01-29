@@ -8,16 +8,15 @@ Usage
 ===========
 
 **syntax:**
+
     import yahoocandles as ys
     ys.get_data(symbol: str, interval: str, exchange: str)
 
-
-
+    
 Quick Start
 ===========
 
 **Sample Usage Snippet**
-    
     
     import yahoocandles as ys
     data = ys.get_data(symbol="TATAPOWER", interval="1m",exchange="NSE")
