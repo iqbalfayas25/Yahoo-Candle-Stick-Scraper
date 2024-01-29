@@ -17,10 +17,12 @@ Quick Start
 ===========
 
 **Sample Usage Snippet**
+    
+    
     import yahoocandles as ys
-    data = ys.get_data(symbol="TATAPOWER", interval="1m", )
-
+    data = ys.get_data(symbol="TATAPOWER", interval="1m",exchange="NSE")
     print(data)
+
 
     
 Here are some simple ways to navigate that data structure::
